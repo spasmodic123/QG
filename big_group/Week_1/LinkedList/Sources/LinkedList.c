@@ -5,7 +5,7 @@
 #include "LinkedList.h"
 
 
-LinkedList init_link(LinkedList L)
+LinkedList init_link(LinkedList L)//初始化单向链表
 {
 	if (!L) // Judge if the head node exists
 	{
@@ -22,7 +22,7 @@ LinkedList init_link(LinkedList L)
 }
 
 
-LinkedList_two_way init_link_two_way(LNode_two_way* L)
+LinkedList_two_way init_link_two_way(LNode_two_way* L)//初始化双向链表
 {
 	LinkedList_two_way head_two_way = (LinkedList_two_way)malloc(sizeof(LNode_two_way));
 	assert(head_two_way!=NULL);
@@ -31,7 +31,7 @@ LinkedList_two_way init_link_two_way(LNode_two_way* L)
 }
 
 
-Status destroy_list(LNode* L)
+Status destroy_list(LNode* L)//销毁链表
 {
 	if (L=NULL || L->next == NULL) {
 		printf("������,��������\n");
@@ -52,7 +52,7 @@ Status destroy_list(LNode* L)
 }
 
 
-Status delete_list(LNode* L, ElemType e)
+Status delete_list(LNode* L, ElemType e)//删除链表的某一个结点
 {
 	if (L=NULL || L->next == NULL) {
 		printf("������,����ɾ��ĳһ�����\n");
@@ -81,7 +81,7 @@ Status delete_list(LNode* L, ElemType e)
 }
 
 
-Status insert_list(LNode* L, int position, ElemType e)
+Status insert_list(LNode* L, int position, ElemType e)//插入结点
 {
 	if (L==NULL || L->next == NULL) {
 		printf("������,���ɲ�����\n");
@@ -110,7 +110,7 @@ Status insert_list(LNode* L, int position, ElemType e)
 }
 
 
-Status traverse_list(LNode* L)
+Status traverse_list(LNode* L)//遍历单向链表
 {
 	LinkedList p1 = L;
 	if (p1==NULL || p1->next == NULL) {
@@ -128,7 +128,7 @@ Status traverse_list(LNode* L)
 }
 
 
-Status traverse_two_way_list(LinkedList_two_way* L)
+Status traverse_two_way_list(LinkedList_two_way* L)//遍历双向链表
 {
 	LinkedList_two_way p = L;
 	if (p == NULL || p->next == NULL) {
@@ -145,7 +145,7 @@ Status traverse_two_way_list(LinkedList_two_way* L)
 }
 
 
-Status search_list(LNode* L, ElemType e)
+Status search_list(LNode* L, ElemType e)//查找链表的某一个结点
 {
 	if (L==NULL || L->next == NULL) {
 		printf("������,���ɲ���\n");
@@ -171,7 +171,7 @@ Status search_list(LNode* L, ElemType e)
 }
 
 
-LinkedList reverse_list_recur(LNode* L)
+LinkedList reverse_list_recur(LNode* L)//递归,反转链表
 {
 	LinkedList p, p_tmp, new_head;
 	p = p_tmp = new_head = L;
@@ -191,7 +191,7 @@ LinkedList reverse_list_recur(LNode* L)
 }
 
 
-LinkedList reverse_list_interation(LNode* head)
+LinkedList reverse_list_interation(LNode* head)//迭代,反转链表
 {
 	if (head == NULL || head->next == NULL) {
 		return head;
@@ -204,7 +204,7 @@ LinkedList reverse_list_interation(LNode* head)
 }
 
 
-Status is_loop_list(LNode* L)
+Status is_loop_list(LNode* L)//判断成环
 {
 	LinkedList p = L;
 	if (p == NULL || p->next == NULL) {
@@ -225,7 +225,7 @@ Status is_loop_list(LNode* L)
 }
 
 
-Status reversr_even_list(LNode* L)
+Status reversr_even_list(LNode* L)//奇数偶数项替换
 {
 	LinkedList p = L;
 	LinkedList p1=NULL;
@@ -261,7 +261,7 @@ Status reversr_even_list(LNode* L)
 }
 
 
-Status find_mid_node(LNode* L) {
+Status find_mid_node(LNode* L) {//返回中间结点
 	LinkedList p1, p2;
 	p1 = L; p2 = L;
 	if (p1 == NULL || p1->next == NULL) {
@@ -278,7 +278,7 @@ Status find_mid_node(LNode* L) {
 }
 
 
-Status create_one_way_list(LNode* L)
+Status create_one_way_list(LNode* L)//创建单向链表
 {
 	printf("����0�����������!\n");
 	LinkedList p1 = L;
@@ -308,7 +308,7 @@ Status create_one_way_list(LNode* L)
 
 
 
-Status create_two_way_list(LNode_two_way* L)
+Status create_two_way_list(LNode_two_way* L)//创建双向链表
 {
 	printf("����0���������!\n");
 	while (1) {
@@ -351,7 +351,7 @@ Status create_two_way_list(LNode_two_way* L)
 
 
 
-LinkedList create_loop_list(LNode* L)
+LinkedList create_loop_list(LNode* L)//创建环状链表
 {
 	LinkedList loop_point = L;//�ɻ�,���������Ľ��
 	LinkedList p1,p2 = L;
